@@ -82,6 +82,9 @@ dtangle <- function(Y, references = NULL, pure_samples = NULL, n_markers = NULL,
     cmbd <- combine_Y_refs(Y, references, pure_samples)
     Y <- cmbd$Y
     pure_samples <- cmbd$pure_samples
+
+    rm(cmbd)
+    gc()
     
     prc <- process_markers(Y, pure_samples, n_markers, data_type, gamma, markers, 
         marker_method)
